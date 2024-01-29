@@ -56,3 +56,51 @@ for element in stock_prices:
     if element[0] == "march 31":
         print(element[1])
 # the retreival becomes very fast O(1)
+#first step in creating a hasmap is defining a hash function
+#hash function is a function that takes a string and returns a number
+#this can be achieved by many methods one of whihc is using ascii
+
+def get_hash(key):
+    h = 0
+    for char in key:
+        h += ord(char)
+    return h % 100
+get_hash("march 6") 
+
+
+
+class HashTables:
+    def __init__(self):
+        self.MAX = 100
+        self.arr = [None for i in range(self.MAX)]
+        
+    def get_hash(self,key):
+        h = 0
+        for char in key:
+            h += ord(char)
+        return h % self.MAX
+    def __setitem__(self,key,val):
+        h = self.get_hash(key)
+        self.arr[h] = val
+    def __getitem__(self,key):
+        h = self.get_hash(key)
+        return self.arr[h]
+    def __deleteitem__(self,key):
+        h = get_hash(key)
+        self.arr[h] = None
+t = HashTables()
+t.add("march 6",140)
+t.get('march 6')
+del t['march 6']
+#this does not handel collsion
+#t['march 6'] = 130 is more convineient to write than to call get add function
+# to override this python provides __setitem__() and __getitem__() whihch overrides this sytnax
+
+t['march 7'] = 340
+t['march 7']
+
+
+
+#handling collsions using seperate chaining method or linear probing
+
+
