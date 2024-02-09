@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	//"go/types"
+)
 
 //import "time"
 
@@ -25,11 +28,11 @@ import "fmt"
 // 	}() // this is a go routine that is sending a message to the channel
 // 	msg := <-mychannel // this is a blocking call
 // 	fmt.Println((msg))
-	// this implements the joining point for the forked child process
+// this implements the joining point for the forked child process
 
 //}
 
-// Generics in go 
+// Generics in go
 func Add [t int | float64] (a t , b t) t{
 	return (a + b)
 }
