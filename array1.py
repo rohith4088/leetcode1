@@ -1,6 +1,6 @@
-# from array import *
-# arr = array('i',[1,2,3,4])
-# print(arr)
+from array import *
+arr = array('i',[1,2,3,4])
+print(arr)
 # b Represents signed integer of size 1 byte
 # B Represents unsigned integer of size 1 byte
 # c Represents character of size 1 byte
@@ -11,18 +11,18 @@
 
 #accessing the elemnets of an array
 
-# arr[3] = 9
-# arr[2] = 10
-# print(arr)
+arr[3] = 9
+arr[2] = 10
+print(arr)
 
-# arr.insert(3,90)
-# print(arr)
-# arr.remove(1)
-# print(arr)
-# arr.count(3)
-# print(arr)
-# arr.pop(2)
-# print(arr)
+arr.insert(3,90)
+print(arr)
+arr.remove(1)
+print(arr)
+arr.count(3)
+print(arr)
+arr.pop(2)
+print(arr)
 print("--------------------------------")
 # Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 # Example 1:
@@ -30,21 +30,21 @@ print("--------------------------------")
 # Output: true
 
 #brute force solution
-# def duplicates(nums)-> bool:
-#     # for i in range(len(nums)):
-#     #     if nums.count(nums[i])>1:
-#     #        return True
-#     # else:
-#     #     return False
-#     map = {}
-#     if len(nums) < 2:
-#         return
-#     for i in range(len(nums)):
-#         if nums[i] in map:
-#             return True
-#         else:
-#             map[nums[i]] = True
-# print(duplicates([1,3,2,1]))
+def duplicates(nums)-> bool:
+    # for i in range(len(nums)):
+    #     if nums.count(nums[i])>1:
+    #        return True
+    # else:
+    #     return False
+    map = {}
+    if len(nums) < 2:
+        return
+    for i in range(len(nums)):
+        if nums[i] in map:
+            return True
+        else:
+            map[nums[i]] = True
+print(duplicates([1,3,2,1]))
 
 print("--------------------------------")
 
@@ -54,26 +54,26 @@ print("--------------------------------")
 #Example 2 : array = [2,6,4,6,1,3,8,1,2]
 #It should return 6
 
-# def return_recurring(nums) -> int:
-#     map = {}
-#     if len(nums) < 2:
-#         return
-#     for i in range(len(nums)):
-#         if nums[i] in map:
-#             return nums[i]
-#         else:
-#             map[nums[i]] = True
-#             print(map)
+def return_recurring(nums) -> int:
+    map = {}
+    if len(nums) < 2:
+        return
+    for i in range(len(nums)):
+        if nums[i] in map:
+            return nums[i]
+        else:
+            map[nums[i]] = True
+            print(map)
     
             
-# print(return_recurring([2,6,4,6,1,3,8,1,2]))
+print(return_recurring([2,6,4,6,1,3,8,1,2]))
 
 print("----------------------------------------------------------------")
 
 #internal implementaion for arrays
 
 class my_array():
-    def __iniit__(self):
+    def __init__(self):
         self.length = 0
         self.data = {}
     #The attributes of the array class are stored in a dictionary by default.
@@ -85,27 +85,30 @@ class my_array():
     def __str__(self):
         print(self.data.values())
         return str(self.__dict__)
-    def get(self,key):
-        return self.data[key]
-    def push(self,value):
+    def get(self,index):
+        return self.data[index]
+    def push(self,item):
         self.length += 1
-        self.data[self.length - 1] = value
+        self.data[self.length - 1] = item
     def pop(self):
-        self.length -= 1
-        lastitem = self.data[self.length - 1]
+        last_item = self.data[self.length - 1]
         del self.data[self.length - 1]
-        return lastitem
-    def insert(self,key,value):
-        self.length += 1
-        for i in range(self.length - 1 ,key,-1):
-            self.data[i] = self.data[i-1]
-        self.data[key] = value
-    def delete(self,index):
         self.length -= 1
-        for i in range(index,self.length-1):
+        return last_item
+    def insert(self,index,item):
+        self.length += 1
+        for i in range(self.length - 1,index,-1):
+            self.data[i] = self.data[i-1]
+        self.data[index] = item
+    def delete(self,index):
+        for i in range(index,self.length -1):
             self.data[i] = self.data[i+1]
         del self.data[self.length - 1]
         self.length -= 1
+        
+        
+        
+        
 arr = my_array()
 print(arr)
 print("-"*100)

@@ -1,0 +1,36 @@
+Filename: /Users/rohithr/Desktop/leetcode/memoryprofiler.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+     4     46.0 MiB     46.0 MiB           1   @profile(stream = file_log)
+     5                                         def myfucn(list_size):
+     6     53.6 MiB      7.6 MiB           1       l1 = ['hello'] * list_size
+     7     61.2 MiB      7.6 MiB           1       l2 = ['world'] * list_size
+     8     61.2 MiB      0.0 MiB           1       del l2
+     9     61.2 MiB      0.0 MiB           1       return l1
+
+
+Filename: /Users/rohithr/Desktop/leetcode/memoryprofiler.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+     4     61.2 MiB     61.2 MiB           1   @profile(stream = file_log)
+     5                                         def myfucn(list_size):
+     6     61.2 MiB      0.0 MiB           1       l1 = ['hello'] * list_size
+     7     61.2 MiB      0.0 MiB           1       l2 = ['world'] * list_size
+     8     61.2 MiB      0.0 MiB           1       del l2
+     9     61.2 MiB      0.0 MiB           1       return l1
+
+
+Filename: /Users/rohithr/Desktop/leetcode/memoryprofiler.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+     4     61.2 MiB     61.2 MiB           1   @profile(stream = file_log)
+     5                                         def myfucn(list_size):
+     6   1950.9 MiB   1889.7 MiB           1       l1 = ['hello'] * list_size
+     7    378.5 MiB  -1572.4 MiB           1       l2 = ['world'] * list_size
+     8     11.2 MiB   -367.3 MiB           1       del l2
+     9     11.3 MiB      0.1 MiB           1       return l1
+
+
