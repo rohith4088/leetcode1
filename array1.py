@@ -147,7 +147,8 @@ print("----------------------------------------------------------------")
 # #Input: "fun&!! time"
 # #Output: time
 
-
+import time 
+@time
 def largest_word(s):
     s = s.split()
     
