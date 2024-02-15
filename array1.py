@@ -147,8 +147,7 @@ print("----------------------------------------------------------------")
 # #Input: "fun&!! time"
 # #Output: time
 
-import time 
-@time
+
 def largest_word(s):
     s = s.split()
     
@@ -162,5 +161,29 @@ def largest_word(s):
             print(word)
 largest_word("rohith is a good boy!!!!!")
 
+
+
+# Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+
+# You must write an algorithm that runs in O(n) time.
+# Example 1:
+# Input: nums = [100,4,200,1,3,2]
+# Output: 4
+# Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
+
+
+def longest_subsequence(nums) -> list:
+    sets = list(set(nums))
+    sets.sort()
+    sequence = []
+    for i in range(len(sets)):
+        if sets[i] + 1 in sets:
+            sequence.append(sets[i])
+        else:
+            sequence.append(sets[i])  # Append the last element of the consecutive sequence
+            break
+    return len(sequence)
+
+print(longest_subsequence([100,4,200,1,3,2])) #only passes 31/75 test cases
 
 

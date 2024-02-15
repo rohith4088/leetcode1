@@ -21,7 +21,8 @@
 # def f2(f):
 #     f()
 # f2(f1)
-    
+
+#pyhton decorators
 def f1(func):
     def wrapper(*args,**kwargs):
         print("started")
