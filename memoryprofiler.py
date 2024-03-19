@@ -1,7 +1,7 @@
 from memory_profiler import profile,memory_usage
-#file_log = open("memory_profiler.log","w+")
+file_log = open("memory_profiler2.log","w+")
 
-@profile#stream = file_log)
+@profile(stream = file_log)
 def myfucn(list_size):
     l1 = ['hello'] * list_size
     l2 = ['world'] * list_size
@@ -23,16 +23,16 @@ myfucn(1000000000)
 # f2(f1)
 
 #pyhton decorators
-def f1(func):
-    def wrapper(*args,**kwargs):
-        print("started")
-        func(*args,**kwargs)
-        print("ended")
-    return wrapper
-@f1
-def f(a,b = 9):
-    print(a,b)
+# def f1(func):
+#     def wrapper(*args,**kwargs):
+#         print("started")
+#         func(*args,**kwargs)
+#         print("ended")
+#     return wrapper
+# @f1
+# def f(a,b = 9):
+#     print(a,b)
 #f1(f)()
 #or
 #x = f1(f) #decoraters
-f("hello")
+# f("hello")
