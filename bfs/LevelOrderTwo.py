@@ -4,16 +4,15 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-def zigzag(root):
+def LevelOrder(root):
     if root is None:
         return []
     q = deque()
     q.append(root)
     big_list = []
-    flag = False
-    while len(q):
+    while q:
         size = len(q)
-        small_list= []
+        small_list = []
         for _ in range(size):
             node = q.popleft()
             small_list.append(node.val)
@@ -21,18 +20,13 @@ def zigzag(root):
                 q.append(node.left)
             if node.right:
                 q.append(node.right)
-        if flag:
-            small_list.reverse()
         big_list.append(small_list)
-        flag = not flag
-    return big_list
+    return big_list[::-1]
 
 if __name__ == "__main__":
     #root = [3,9,20,null,null,15,7]
     root = TreeNode(3)
     root.left = TreeNode(9,None,None)
     root.right = TreeNode(20,TreeNode(15,None,None),TreeNode(7,None,None))
-    print(zigzag(root))
+    print(LevelOrder(root))
 
-
-#PASSES ALL THE TEST CASES
