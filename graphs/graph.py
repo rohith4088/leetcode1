@@ -10,3 +10,39 @@
 #Here we will build an undirected graph using an adjacency list.
 
 
+class Graph():
+    def __init__(self):
+        self.number_of_nodes = 0
+        self.adjacency_list = {}
+    def insert_node(self,data):
+        if data not in self.adjacency_list:
+            self.adjacency_list[data] = []
+            self.number_of_nodes += 1
+    def insert_edge(self,vertex1,vertex2):
+        if vertex2 not in self.adjacency_list[vertex1]:
+            self.adjacency_list[vertex1].append(vertex2)
+            self.adjacency_list[vertex2].append(vertex1)
+            return
+        print("Edge already exists")
+    def show_connections(self):
+        for node in self.adjacency_list:
+            print(node, end = "-->")
+            for vertex in self.adjacency_list[node]:
+                print(vertex, end = " ")
+            print()
+g = Graph()
+g.insert_node(0)
+g.insert_node(1)
+g.insert_node(2)
+g.insert_node(3)
+g.insert_node(4)
+g.insert_node(5)
+g.insert_edge(0,1)
+g.insert_edge(0,2)
+g.insert_edge(1,2)
+g.insert_edge(1,3)
+g.insert_edge(2,4)
+g.insert_edge(3,4)
+g.insert_edge(4,5)
+
+g.show_connections()
