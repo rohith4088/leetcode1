@@ -13,9 +13,12 @@ def threesum(nums, target):
             elif current_sum < target:
                 l += 1
             else:
-                r -= 1
-            closest_sum = min(closest_sum, abs(current_sum - target))
-    return closest_sum
+                #r -= 1
+                #closest_sum = min(current_sum, abs(current_sum - target))
+                l += 1
+                while nums[l]== nums[l-1] and l < r:
+                    l += 1
+    return current_sum
 
 print(threesum([-1, 2, 1, -4], 1)) # Output: 2
 print(threesum([0, 0, 0], 1)) # Output: 0
