@@ -20,8 +20,17 @@ from nltk.tag import UnigramTagger
 # print(fd.most_common(10))
 
 #unigram tagger
-from nltk.tag import UnigramTagger
-tagged_sents = brown.tagged_sents(categories = 'news')
-sents = brown.sents(categories = 'news')
-tagger = UnigramTagger(tagged_sents)
-print(tagger.tag(sents[2007]))
+# from nltk.tag import UnigramTagger
+# tagged_sents = brown.tagged_sents(categories = 'news')
+# sents = brown.sents(categories = 'news')
+# tagger = UnigramTagger(tagged_sents)
+# print(tagger.tag(sents[2007]))
+
+# from nltk.tbl import demo as brill_demo
+# brill_demo.demo()
+
+
+tagged_words = nltk.tag.str2tuple('fly/NN')
+print(tagged_words)
+print(tagged_words[0])
+print(tagged_words[1])
