@@ -8,9 +8,9 @@ class NueralNetwork():
         self.hidden_size = hidden_size
         self.output_size = output_size
 
-        self.W1 = np.random.randn(hidden_size,input_size)
+        self.W1 = np.random.randn(hidden_size,input_size) * 0.01
         self.b1 = np.zeros((hidden_size,1))
-        self.W2 = np.random.randn(output_size,hidden_size)
+        self.W2 = np.random.randn(output_size,hidden_size) * 0.01
         self.b2 = np.zeros((output_size,1))
     def ForwardPropogation(self,X):
         self.Z1 = np.dot(self.W1,X) + self.b1
@@ -24,7 +24,7 @@ class NueralNetwork():
         dW2 = (1/m) * np.dot(dZ2,self.A1.T)
         db2 = (1/m) * np.sum(dZ2,axis = 1,keepdims=True)
         dZ1 = np.dot(self.W2.T,dZ2) * (1-np.power(self.A1,2))
-        dW1 = (1/m) * np.dot(self.Z1,X.T)
+        dW1 = (1/m) * np.dot(dZ1,X.T)
         db1 = (1/m) * np.sum(dZ1,axis = 1,keepdims=True)
         
         self.W2 -= dW2
@@ -47,7 +47,7 @@ class NueralNetwork():
 
 X = np.array([[0,0],[0,1],[1,0],[1,1]])
 X = X.T
-Y = np.array([[0,1,1,0]])
+Y = np.array([[0],[1],[1],[0]])
 Y = Y.T
 input_size = 2
 hidden_size = 4
@@ -55,4 +55,8 @@ output_size = 1
 
 model = NueralNetwork(input_size, hidden_size, output_size)
 model.train(X, Y, epochs=1000, learning_rate=0.01)
+
+
+
+
 
