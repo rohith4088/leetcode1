@@ -1,5 +1,5 @@
 #implementaion of stacks in python is sinple and using arrays hence all the operation deon on arrays can be referenced for stacks
-
+#ARRAY IMPLEMNTATION
 class stack():
     def __init__(self,):
         self.array = []
