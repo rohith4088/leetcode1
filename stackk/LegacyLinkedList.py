@@ -9,7 +9,7 @@ class Node():
         self.data = data
         self.next = None
 class Stack():
-    def __init(self):
+    def __init__(self):
         self.top = None
         self.bottom = None
         self.length = 0
