@@ -18,7 +18,7 @@ class BST():
             self._insert(self.root,key)
 
     def _insert(self,root,key):
-        if key.data > root.data:
+        if key.data > root.data: 
             if root.right_child == None:
                 root.rigth_child = key
             else:
@@ -63,7 +63,7 @@ class BST():
                 self._find_val(root.left_child,key)
             else:
                 self._find_val(root.right_child,key)
-        return "teh value is not found in the tree"
+        return "the value is not found in the tree"
     def min_right_subtree(self,root):
         if root.left_child == None:
             return root
