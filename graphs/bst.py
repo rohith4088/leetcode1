@@ -48,7 +48,7 @@ class BST():
     def postorder(self):
         self._postorder(self.root)
     def _postorder(self,root):
-        l#eft right root
+        #left right root
         if root:
             self._postorder(root.left_child)
             self._postorder(root.right_child)
@@ -131,10 +131,3 @@ tree.inorder()
 tree.delete_val("C")
 tree.inorder()
 tree.delete_val("Z")
-
-        
-
-
-
-
-
