@@ -3,7 +3,7 @@ def FourSum(nums,target):
     res,quad = [],[]
     #the fucntion ksum is a recursive function that is generalsied for any number of k
     #the base is that if two sumII
-
+    
     def ksum(k,start,target):
         if k != 2:
             for i in range(start,len(nums) - k +1): #len(nums) - k  + 1 is used to avoid inde out of range , this also abvoid duplicates in theformat for quads

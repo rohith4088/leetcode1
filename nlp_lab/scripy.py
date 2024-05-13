@@ -7,6 +7,7 @@ from nltk.stem import WordNetLemmatizer
 import re
 from nltk.corpus import brown
 from collections import Counter
+nltk.download('stopwords')
 def main():
     ps = PorterStemmer()
     wnl = WordNetLemmatizer()
@@ -26,7 +27,10 @@ def main():
         for word in words:
             print("{0:20}{1:20}".format(word, wnl.lemmatize(word, pos="v")))
     def remove_special_characters(text):
-        return re.sub('^\s|\s$',"",text)
+        text = text.strip()
+        text = re.sub(r'\s+',' ',text)
+        return text
+
     def wh_words(text):
         words = word_tokenize(text)
         stop_words = set(stopwords.words("english"))
