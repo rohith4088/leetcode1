@@ -84,7 +84,7 @@ def main():
         train_feature = [(feature_extract(words),category) for words,category in train_size]
         test_features = [(feature_extract(words),category) for words , category in test_size]
         clf = NaiveBayesClassifier.train(train_feature)
-        acc = classify.accuracy(clf,train_feature)
+        acc = classify.accuracy(clf,test_features)
         print(acc)
         for sentence in sent:
             words = nltk.word_tokenize(sentence)
