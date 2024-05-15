@@ -42,13 +42,3 @@ nltk.download('omw-1.4')
 # tagged = nltk.corpus.brown.tagged_words(categories = 'news',tagset = 'universal')
 # fd_tagged = nltk.FreqDist(tag for(word,tag) in tagged)
 # print(fd_tagged.most_common)
-
-from nltk.corpus import stopwords
-def word_freq():
-    words = nltk.corpus.brown.words(categories = 'news')
-    stop_words = set(stopwords.words("english"))
-    filtered = [word for word in words if word not in stop_words]
-    common = nltk.FreqDist(filtered)
-    for word,freq in common.items():
-        print("{0:20} {1:20}".format(word,freq))
-word_freq()

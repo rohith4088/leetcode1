@@ -47,7 +47,10 @@ def main():
     def remove_special_characters(text):
         text = text.strip()
         text = re.sub(r'\s+',' ',text)
-        return text
+        text = text.split(' ')
+        text = [word for word in text if word]
+        res = ' '.join(text)
+        return text , res
 
     def wh_words(text):
         words = word_tokenize(text)
@@ -58,7 +61,7 @@ def main():
         words = brown.words(categories = "news")
         freq = nltk.FreqDist(words)
         for word, frequency in freq.items():
-            print("{0:20}{1:20}".format(word, frequency))
+            print("{0:20}{1:20}".format(word, frequency)) 
     def frequent_bigram(tetx,n):
         words = word_tokenize(text)
         stop_words = set(stopwords.words("english"))
