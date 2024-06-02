@@ -15,3 +15,17 @@ if __name__ == "__main__":
     for p in procs:
         p.join()
     print('work took {} seconds'.format(time.time() - t))
+
+
+class Node():
+    def __init__(self,data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+class BST():
+    def __init__(self):
+        self.root = None
+        self.number_of_nodes = 0
+    def insert(self,data):
+        new_node = Node(data)
