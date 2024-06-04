@@ -25,3 +25,6 @@ while thread.is_alive():
     count += 1
 print("calculated squares upto {0} * {0} = {1}".format(count,result))
 print("while you typed {}".format(thread.line_of_text))
+
+
+#problems with threads --> shared memory,
