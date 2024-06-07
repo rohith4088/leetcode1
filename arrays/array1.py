@@ -38,12 +38,13 @@ def duplicates(nums)-> bool:
     #     return False
     map = {}
     if len(nums) < 2:
-        return
+        return False
     for i in range(len(nums)):
         if nums[i] in map:
             return True
         else:
             map[nums[i]] = True
+    return True
 print(duplicates([1,3,2,1]))
 
 print("--------------------------------")
@@ -57,7 +58,7 @@ print("--------------------------------")
 def return_recurring(nums) -> int:
     map = {}
     if len(nums) < 2:
-        return
+        return 0
     for i in range(len(nums)):
         if nums[i] in map:
             return nums[i]
@@ -182,7 +183,7 @@ def longest_subsequence(nums) -> list:
         else:
             sequence.append(sets[i])  # Append the last element of the consecutive sequence
             break
-    return len(sequence)
+    return list(len(sequence))
 
 print(longest_subsequence([100,4,200,1,3,2])) #only passes 31/75 test cases
 
