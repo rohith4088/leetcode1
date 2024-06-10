@@ -34,4 +34,3 @@ arr.push(4)
 arr.push(5)
 arr.push(6)
 print(arr.get(3))
-

@@ -47,6 +47,7 @@ with concurrent.futures.ProcessPoolExecutor() as executor:
     results = [executor.submit(do_something,1)for _ in range(10)]
     for f in concurrent.futures.as_completed(results):
         print(f.result())
+        
 
 finish = time.perf_counter()
 print("the time taken is {}".format(round(finish-start,2)))
