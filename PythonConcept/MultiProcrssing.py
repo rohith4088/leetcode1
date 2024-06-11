@@ -37,17 +37,43 @@ import concurrent
 #     print("the time taken is {}".format(round(finish - start,2)))
 
 #using process pool executors
-start = time.perf_counter()
-def do_something(seconds):
-    print(f'sleeping for {seconds} second(s)')
-    time.sleep(seconds)
-    return 'done sleeping.....'
-with concurrent.futures.ProcessPoolExecutor() as executor:
-    secs = [5,4,3,2,1]
-    results = [executor.submit(do_something,1)for _ in range(10)]
-    for f in concurrent.futures.as_completed(results):
-        print(f.result())
+# start = time.perf_counter()
+# def do_something(seconds):
+#     print(f'sleeping for {seconds} second(s)')
+#     time.sleep(seconds)
+#     return 'done sleeping.....'
+# with concurrent.futures.ProcessPoolExecutor() as executor:
+#     secs = [5,4,3,2,1]
+#     results = [executor.submit(do_something,1)for _ in range(10)]
+#     for f in concurrent.futures.as_completed(results):
+#         print(f.result())
         
 
-finish = time.perf_counter()
-print("the time taken is {}".format(round(finish-start,2)))
+# finish = time.perf_counter()
+# print("the time taken is {}".format(round(finish-start,2)))
+
+
+
+
+from multiprocessing import Pool
+# def f(x):
+#     return x*x
+# if __name__ == "__main__":
+#     with Pool(5) as p:
+#         print(p.map(f,[1,2,3,4]))
+
+
+
+import os
+
+def info(title):
+    print(title)
+    print("parent",os.getppid())
+    print("child",os.getpid())
+def f(name):
+    print("hello",name)
+if __name__ == "__main__":
+    info("main_line")
+    p = Process(target = f , args = ['rohith'])
+    p.start()
+    p.join()
