@@ -77,3 +77,6 @@ if __name__ == "__main__":
     p = Process(target = f , args = ['rohith'])
     p.start()
     p.join()
+
+
+#multiprocessing supports three wayys to start a process--> fork , spawn , forkserver
