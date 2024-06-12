@@ -66,17 +66,42 @@ from multiprocessing import Pool
 
 import os
 
-def info(title):
-    print(title)
-    print("parent",os.getppid())
-    print("child",os.getpid())
-def f(name):
-    print("hello",name)
-if __name__ == "__main__":
-    info("main_line")
-    p = Process(target = f , args = ['rohith'])
-    p.start()
-    p.join()
+# def info(title):
+#     print(title)
+#     print("parent",os.getppid())
+#     print("child",os.getpid())
+# def f(name):
+#     print("hello",name)
+# if __name__ == "__main__":
+#     info("main_line")
+#     p = Process(target = f , args = ['rohith'])
+#     p.start()
+#     p.join()
 
 
 #multiprocessing supports three wayys to start a process--> fork , spawn , forkserver
+#USING SPAWN
+
+# def g(q):
+#     q.put('hello')
+# if __name__ == "__main__":
+#     multiprocessing.set_start_method("spawn")
+#     q = multiprocessing.Queue()
+#     p = multiprocessing.Process(target = g,args = (q,))
+#     p.start()
+#     print(q.get())
+#     p.join()
+
+
+#USING CONTEXT_MANAGERS --> USED TO INITALISE MORE THAN ONE START METHOD IN THE SAME SCRIPT
+
+def f(q):
+    q.put("hello")
+if __name__ == "__main__":
+    ctx = multiprocessing.get_context("spawn")
+    q = ctx.Queue()
+    p = Process(target = f , args = [q,])
+    p.start()
+    print(q.get())
+    p.join()
+
