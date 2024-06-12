@@ -100,7 +100,7 @@ def f(q):
 if __name__ == "__main__":
     ctx = multiprocessing.get_context("spawn")
     q = ctx.Queue()
-    p = Process(target = f , args = [q,])
+    p = Process(target = f , args = (q,))
     p.start()
     print(q.get())
     p.join()
