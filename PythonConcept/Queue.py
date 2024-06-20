@@ -2,7 +2,7 @@ import multiprocessing
 from multiprocessing import Queue , Process
 
 #implemntation of queues in multiprocessing
-#for exvhanging objects between processes
+#for exchanging objects between processes
 
 def func(q):
     q.put([24,None,'name'])
