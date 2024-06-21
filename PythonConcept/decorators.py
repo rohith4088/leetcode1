@@ -12,7 +12,9 @@ def timeit(func):
 @timeit
 def compute(n):
     time.sleep(n)
+
     return n
+
 
 result = compute(4)
 print("result-->",result)
