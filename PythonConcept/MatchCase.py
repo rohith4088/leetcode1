@@ -13,6 +13,3 @@ def where_is(point):
     
 p = Point(0,12)
 print(where_is(p))
-    
-
-
