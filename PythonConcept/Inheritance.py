@@ -26,3 +26,22 @@ class ContactFactory():
 cf = ContactFactory()
 cf.create_contact('rohiht@123' , '938928932')
 cf.create_supplier('brake fluid' ,' rohith@123')
+
+print("---------------")
+#extending the built in's the list and dict methods
+class LongestWord(dict):
+    def calc(self):
+        longest = None
+        for key in self:
+            if not longest or len(key) > len(longest):
+                longest = key
+        return longest
+dixt = LongestWord()
+dixt['hello'] = 1
+dixt['rohihth'] = 2
+dixt['hellloooo'] = 3
+
+print(dixt.calc())
+
+
+#
