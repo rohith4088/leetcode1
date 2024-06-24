@@ -37,3 +37,34 @@ class FriendlistUsingSuper(Contacts):
 
         
 
+#ADVANCED SUPER AND OVERRIDE
+#COOPERATICE MTTHOD CALLS
+from datetime import datetime
+class BaseLogger:
+    def log(self , message):
+        print(f'Base : {message}')
+class TimeStampLogger(BaseLogger):
+        def log(self,message):
+            super().log(message)
+            print(f"TimeStamp : {datetime.now()}")
+
+logger = TimeStampLogger()
+logger.log("An important event occurred.")
+
+
+#meta class interaction
+#Metaclasses Define Classes: Just as a class defines how instances are created and behave, a metaclass defines how classes are created and behave. It's a "class factory" that controls the construction of classes.
+class MyMetaclass(type):
+    def __new__(metacls, name, bases, namespace):
+        print(f'Creating class name of {name}, bases {bases} and attributes {namespace}')
+        return super().__new__(metacls, name, bases, namespace)
+
+class MyClass(metaclass=MyMetaclass):
+    x = 10
+
+    def __init__(self, y):
+        self.y = y
+# metacls: A reference to the metaclass itself.
+# name: The name of the class being created.
+# bases: A tuple of the base classes of the class being created.
+# namespace: A dictionary containing the attributes (variables and methods) of the class.
