@@ -42,5 +42,3 @@ dixt['rohihth'] = 2
 dixt['hellloooo'] = 3
 
 print(dixt.calc())
-
-
