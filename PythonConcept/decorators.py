@@ -12,7 +12,6 @@ def timeit(func):
 @timeit
 def compute(n):
     time.sleep(n)
-
     return n
 
 
