@@ -38,7 +38,7 @@ class FriendlistUsingSuper(Contacts):
         
 
 #ADVANCED SUPER AND OVERRIDE
-#COOPERATICE MTTHOD CALLS
+#COOPERATIVE MeTHOD CALLS
 from datetime import datetime
 class BaseLogger:
     def log(self , message):
