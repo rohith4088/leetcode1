@@ -1,0 +1,17 @@
+Filename: /Users/rohithr/Desktop/leetcode/Sorting/BubbleSort.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    57     45.9 MiB     45.9 MiB           1   @profile(stream = file)
+    58                                         def Bubble(collection):
+    59     45.9 MiB      0.0 MiB           1       length = len(collection)
+    60     45.9 MiB      0.0 MiB           5       for i in range(length - 1):
+    61     45.9 MiB      0.0 MiB           4           swapped = False
+    62     45.9 MiB      0.0 MiB          20           for j in range(length - 1): #less optimised code because it checks till the last element unnecessarily , when we can strongly assume that the last element is already sorted.
+    63     45.9 MiB      0.0 MiB          16               if collection[j] > collection[j+1]:
+    64     45.9 MiB      0.0 MiB          10                   swapped = True
+    65     45.9 MiB      0.0 MiB          10                   collection[j] , collection[j+1] = collection[j+1] , collection[j]
+    66     45.9 MiB      0.0 MiB           4           if not swapped : break
+    67     45.9 MiB      0.0 MiB           1       return collection
+
+

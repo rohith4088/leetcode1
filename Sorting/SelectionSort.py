@@ -4,16 +4,57 @@
 # - Worst case performance O(n)^2
 # - Best case performance O(n)^2
 # - Average case performance O(n)^2
-def selection_sort(collection):
+# def selection_sort(collection):
+#     length = len(collection)
+#     for i in range(length - 1):
+#         least = i
+#         for k in range(i+1 , length):
+#             if collection[k] < collection[least]:
+#                 least = k
+#         collection[least] , collection[i] = (collection[i] , collection[least])
+#     return collection
+# if __name__ == "__main__":
+#     user_input = input('Enter numbers separated by a comma:\n').strip()
+#     unsorted = [int(item) for item in user_input.split(',')]
+
+
+
+
+#WALK AROUND THE SELECTION SORT ALGORITHM
+#the i loop starts from 0 and goes upto length - 1
+#we initialise the variable least as i
+#we run one more for loop "k" form i+1 to length 
+#we check if the collection[k] < collection[least]
+#if this is true we set the least to k
+#then we come out of the "K" for loop and swap the element
+"""
+first step
+5,4,3,2,1
+^ ^
+| | 
+i k
+"""
+#WITH EARLY STOPPING
+from memory_profiler import profile
+file = open("SelectionSortUsage.txt" , 'w+')
+
+@profile(stream = file)
+def SelectionSort(collection):
     length = len(collection)
     for i in range(length - 1):
         least = i
+        swapped = False
         for k in range(i+1 , length):
             if collection[k] < collection[least]:
                 least = k
-        collection[least] , collection[i] = (collection[i] , collection[least])
+                swapped = True
+        if swapped:
+            collection[i] , collection[least] = collection[least] , collection[i]
+        else:
+            break
     return collection
+
+
 if __name__ == "__main__":
-    user_input = input('Enter numbers separated by a comma:\n').strip()
-    unsorted = [int(item) for item in user_input.split(',')]
-    print(*selection_sort(unsorted) , sep = ',')
+    unsorted = [5,4,3,2,1]
+    print(*SelectionSort(unsorted) , sep = ',')

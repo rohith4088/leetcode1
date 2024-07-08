@@ -1,0 +1,21 @@
+Filename: /Users/rohithr/Desktop/leetcode/Sorting/SelectionSort.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    41     45.1 MiB     45.1 MiB           1   @profile(stream = file)
+    42                                         def SelectionSort(collection):
+    43     45.1 MiB      0.0 MiB           1       length = len(collection)
+    44     45.1 MiB      0.0 MiB           3       for i in range(length - 1):
+    45     45.1 MiB      0.0 MiB           3           least = i
+    46     45.1 MiB      0.0 MiB           3           swapped = False
+    47     45.1 MiB      0.0 MiB          12           for k in range(i+1 , length):
+    48     45.1 MiB      0.0 MiB           9               if collection[k] < collection[least]:
+    49     45.1 MiB      0.0 MiB           6                   least = k
+    50     45.1 MiB      0.0 MiB           6                   swapped = True
+    51     45.1 MiB      0.0 MiB           3           if swapped:
+    52     45.1 MiB      0.0 MiB           2               collection[i] , collection[least] = collection[least] , collection[i]
+    53                                                 else:
+    54     45.1 MiB      0.0 MiB           1               break
+    55     45.1 MiB      0.0 MiB           1       return collection
+
+
