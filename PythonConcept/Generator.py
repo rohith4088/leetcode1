@@ -65,3 +65,9 @@ print(sums)
 # for x in values:
 #     print(x)
 
+
+d1={"a":1,'b':2,'c':3,'d':4}
+d2 = {'d':4,'e':5,'f':6}
+
+combined_dict = {**d1 , **d2}
+print(combined_dict)

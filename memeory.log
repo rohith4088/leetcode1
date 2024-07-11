@@ -2,12 +2,12 @@ Filename: /Users/rohithr/Desktop/leetcode/PythonConcept/Generator.py
 
 Line #    Mem usage    Increment  Occurrences   Line Contents
 =============================================================
-     8     46.1 MiB     46.1 MiB           1   @profile(stream = file_log)
+     8     45.5 MiB     45.5 MiB           1   @profile(stream = file_log)
      9                                         def gen(n):
-    10     46.1 MiB      0.0 MiB           1       num , nums = 0, []
-    11     46.1 MiB -11934.0 MiB       10001       while num < n:
-    12     46.1 MiB -11931.0 MiB       10000           nums.append(n)
-    13     46.1 MiB -11932.5 MiB       10000           num +=1 
-    14     41.7 MiB     -4.4 MiB           1       return nums
+    10     45.5 MiB      0.0 MiB           1       num , nums = 0, []
+    11     45.5 MiB   -838.5 MiB       10001       while num < n:
+    12     45.5 MiB   -838.4 MiB       10000           nums.append(n)
+    13     45.5 MiB   -838.4 MiB       10000           num +=1 
+    14     45.4 MiB     -0.1 MiB           1       return nums
 
 
