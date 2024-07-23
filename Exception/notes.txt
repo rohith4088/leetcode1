@@ -1,0 +1,12 @@
+This file contains the basic information about EXCEPTION HANDLING IN PYTHON
+
+-->EXCEPTION IS JUST AN OBJECT
+-->The one thing that is common is that all exception INHERITS from the built-in class called BaseException
+--> Erros and EXCEPTIONS are used interchangebly
+-->if we stack exception clauses like we did in the preceding example, only the first
+matching clause will be run, even if more than one of them fits. How can more
+than one clause match? Remember that exceptions are objects, and can therefore be
+subclassed. As we'll see in the next section, most exceptions extend the Exception
+class (which is itself derived from BaseException). If we catch Exception before
+we catch TypeError, then only the Exception handler will be executed, because
+TypeError is an Exception by inheritance.
