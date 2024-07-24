@@ -32,3 +32,9 @@ class UpperCaseString(str):
 s = UpperCaseString("rohith")
 print(s)
 print("-------------------------")
+
+
+
+class uppercast(str):
+    def __new__(cls , value):
+        return super().__new__(cls , value.upper())

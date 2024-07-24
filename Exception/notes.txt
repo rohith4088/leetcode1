@@ -16,3 +16,9 @@ catch all subclasses of BaseException
 --> if you do want to catch all exceptions, I suggest using the syntax
 except BaseException: instead of a raw except:. This helps explicitly tell future
 readers of your code that you are intentionally handling the special case exceptions.
+
+
+EXPLAIN EXCPTION HANDLING TO A CHILD
+-->Imagine you're building a Lego tower. Sometimes, when you're adding a new piece, it might not fit right or the tower might fall over. When that happens, you don't want to stop playing. Instead, you want to find a way to fix it and keep building.
+-->In Python, when you're writing a program, things can go wrong too. Maybe you try to divide a number by zero or open a file that doesn't exist. These mistakes are called "exceptions."
+-->Exception handling in Python is like having a safety net for your Lego tower. When something goes wrong, instead of crashing the whole program, Python lets you catch the mistake, figure out what went wrong, and then decide what to do next.

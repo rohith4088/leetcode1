@@ -1,0 +1,11 @@
+THIS FILE CONTAINS NOTES ON OOPS 
+
+@classmethod
+--> this function transforms the regular instance method to a classmethod
+--> the main diffrence between instance method and a classmethod is that:
+-->INSTANCE METHOD : is bound to the bound to an instance and has access to instance attributes
+--> CLASS METHOD : is bound to the class and has access to the class attributes
+---EXPLAIN CLASSMETHOD TO A CHILD---
+-->Imagine you have a toy factory that makes different types of toys: cars, dolls, and robots.  The factory itself has a big list of all the toys it has ever made.
+Now, you want to make a new car toy. You wouldn't ask a specific car toy to make another car, right? You would tell the factory, "Hey factory, make me a new car!" The factory knows how to make cars, so it would create one and add it to its big list of all toys.
+In Python code, the @classmethod is like saying "Hey factory!" It's a way to tell the whole class (the toy factory) to do something, like create a new toy.
