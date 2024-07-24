@@ -10,3 +10,9 @@ subclassed. As we'll see in the next section, most exceptions extend the Excepti
 class (which is itself derived from BaseException). If we catch Exception before
 we catch TypeError, then only the Exception handler will be executed, because
 TypeError is an Exception by inheritance.
+--> two key exceptions, SystemExit and KeyboardInterrupt, that derive directly from BaseException instead of Exception.
+--> When we use the except: clause without specifying any type of exception, it will
+catch all subclasses of BaseException
+--> if you do want to catch all exceptions, I suggest using the syntax
+except BaseException: instead of a raw except:. This helps explicitly tell future
+readers of your code that you are intentionally handling the special case exceptions.
