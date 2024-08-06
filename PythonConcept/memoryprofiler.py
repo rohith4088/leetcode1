@@ -1,4 +1,5 @@
 from memory_profiler import profile,memory_usage
+
 file_log = open("memory_profiler2.log","w+")
 
 @profile(stream = file_log)

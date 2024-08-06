@@ -35,14 +35,3 @@ def MergeSort(collection):
     
 collection = [1,3,2,4,34,2,1,2,3,4,3]
 print(MergeSort(collection))
-
-
-
-
-def MergeSort(collection):
-    length = len(collection)
-    if length > 1:
-        midpoint = length //2
-        left_half = MergeSort(collection[:midpoint])
-        right_half = MergeSort(collection[midpoint:])
-        

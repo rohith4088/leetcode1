@@ -10,3 +10,6 @@ THIS FILE CONTAINS NOTES ON OOPS
 Now, you want to make a new car toy. You wouldn't ask a specific car toy to make another car, right? You would tell the factory, "Hey factory, make me a new car!" The factory knows how to make cars, so it would create one and add it to its big list of all toys.
 In Python code, the @classmethod is like saying "Hey factory!" It's a way to tell the whole class (the toy factory) to do something, like create a new toy.
 
+THE __INIT__ METHOD
+-->explanation to a child : Imagine you have a toy robot, and every time you get a new one, you need to give it a name and a color. The __init__ method is like the instructions you follow when you first get the robot. When you create a new robot, you tell it, “Your name is Robbie, and your color is blue.” This way, every new robot knows its name and color right from the start.
+-->to an expert : The __init__ method in Python is a special method, also known as a constructor, that is automatically invoked when a new instance of a class is created. Its primary role is to initialize the instance’s attributes and perform any setup required for the object.
