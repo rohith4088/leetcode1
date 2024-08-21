@@ -1,8 +1,8 @@
-package main
-import (
-	"fmt"
-	//"go/types"
-)
+// package main
+// import (
+// 	"fmt"
+// 	//"go/types"
+// )
 
 //import "time"
 
@@ -32,11 +32,23 @@ import (
 //}
 
 // Generics in go
-func Add [t int | float64] (a t , b t) t{
-	return (a + b)
-}
-func main(){
-	result := Add(1,2)
-	fmt.Println((result))
+// func Add [t int | float64] (a t , b t) t{
+// 	return (a + b)
+// }
+// func main(){
+// 	result := Add(1,2)
+// 	fmt.Println((result))
 
+// }
+
+
+
+package main
+
+import("fmt")
+
+
+func main(){
+	fmt.Println("HELLO WELCOME TO GO!!!")
+	
 }
