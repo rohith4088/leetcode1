@@ -1,4 +1,4 @@
-def QuickSort(collection):
+def QuickSort(collection:list[int])->list[int]:
     length = len(collection)
     if length <= 1:
         return collection
@@ -10,3 +10,6 @@ def QuickSort(collection):
 
 collection = [3,21,4,1,23,5,2,1]
 print(*QuickSort(collection),sep = ',')
+
+
+
