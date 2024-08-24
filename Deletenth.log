@@ -1,0 +1,15 @@
+Filename: /Users/rohithr/Desktop/leetcode/arrays/DeleteNth.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    24     45.5 MiB     45.5 MiB           1   @profile(stream = file)
+    25                                         def Deelete(nums : list[int] , n : int) -> list[int]:
+    26     45.5 MiB      0.0 MiB           1       res = []
+    27     45.5 MiB      0.0 MiB           1       map = collections.defaultdict(int)
+    28     45.5 MiB      0.0 MiB          10       for num in nums:
+    29     45.5 MiB      0.0 MiB           9           if map[num] < n:
+    30     45.5 MiB      0.0 MiB           7               res.append(num)
+    31     45.5 MiB      0.0 MiB           7               map[num] += 1
+    32     45.5 MiB      0.0 MiB           1       return res
+
+
